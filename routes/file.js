@@ -54,7 +54,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 router.post('/', upload.array('file'), function (req, res, next) {
-    for (let file of req.files) {
+    for (var file of req.files) {
         var newFile = new File({
             fieldName: file.fieldname,
             originalName: file.originalname,
