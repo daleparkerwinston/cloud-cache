@@ -1,6 +1,6 @@
 import {Component, OnInit, NgZone} from "@angular/core";
 
-const URL = 'http://localhost:3000/file';
+const URL = 'http://dalewinston.com/file';
 
 @Component({
     selector: 'file-drop',
