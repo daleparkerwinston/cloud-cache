@@ -26,7 +26,7 @@ export class FileComponent {
                 console.log(response.statusText);
                 let blob: Blob = response.blob();
                 var filename = this.file.originalName;
-                window['saveAs'](blob, filename);
+                saveAs(blob, filename);
             });
     }
 }
