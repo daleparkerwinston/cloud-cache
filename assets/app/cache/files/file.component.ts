@@ -21,7 +21,7 @@ export class FileComponent {
 
     getFileData(file: File) {
         let options = new RequestOptions({responseType: ResponseContentType.Blob});
-        return this.http.get('http://localhost:3000/file/' + this.file.fileId, options)
+        return this.http.get('http://dalewinston.com:3000/file/' + this.file.fileId, options)
             .subscribe((response) => {
                 console.log(response.statusText);
                 let blob: Blob = response.blob();
