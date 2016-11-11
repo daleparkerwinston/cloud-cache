@@ -26,10 +26,8 @@ export class FileComponent {
             .subscribe((response) => {
                 console.log(response.statusText);
                 let blob: Blob = response.blob();
-                // var filename = this.file.originalName;
-                // saveAs(blob, filename);
-                var url = window.URL.createObjectURL(blob);
-                window.open(url);
+                var filename = this.file.originalName;
+                saveAs(blob, filename);
             });
     }
 }
