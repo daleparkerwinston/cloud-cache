@@ -15,7 +15,7 @@ export class FileService {
 
     getFiles() {
         // TODO: Change this to global config file like in messages tutorial
-        return this.http.get('http://dalewinston.com:3000/file')
+        return this.http.get('http://dalewinston.com/file')
             .map((response: Response) => {
                 const files = response.json().obj;
                 let transformedFiles: File[] = [];
