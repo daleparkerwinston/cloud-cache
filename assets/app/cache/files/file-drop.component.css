@@ -1,0 +1,8 @@
+.my-drop-zone {
+    border: dotted 3px lightgrey;
+}
+
+/* Default class applied to drop zones on over */
+.file-over {
+    border: dotted 3px red;
+}

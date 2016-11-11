@@ -1,0 +1,12 @@
+<div class="my-drop-zone well"
+        ngFileDrop
+     [options]="options"
+     (onUpload)="handleUpload($event)"
+     [ngClass]="{'file-over': hasBaseDropZoneOver}"
+     (onFileOver)="fileOverBase($event)">
+    Drop files here
+</div>
+<br>
+<div class="progress">
+    <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress + '%'}"></div>
+</div>

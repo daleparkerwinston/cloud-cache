@@ -4,10 +4,14 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
+let mongoose = require('mongoose');
 
 let appRoutes = require('./routes/app');
+let fileRoutes = require('./routes/file');
 
 let app = express();
+mongoose.Promise = global.Promise;
+mongoose.connect('localhost:27017/cloud-cache');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,6 +32,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use('/file', fileRoutes);
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler
