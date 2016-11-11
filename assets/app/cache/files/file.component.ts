@@ -5,6 +5,7 @@ import {
     Http, Response, RequestOptions,
     ResponseContentType
 } from "@angular/http";
+import 'rxjs/Rx' ;
 
 @Component({
     selector: 'file',
@@ -25,8 +26,10 @@ export class FileComponent {
             .subscribe((response) => {
                 console.log(response.statusText);
                 let blob: Blob = response.blob();
-                var filename = this.file.originalName;
-                saveAs(blob, filename);
+                // var filename = this.file.originalName;
+                // saveAs(blob, filename);
+                var url = window.URL.createObjectURL(blob);
+                window.open(url);
             });
     }
 }
